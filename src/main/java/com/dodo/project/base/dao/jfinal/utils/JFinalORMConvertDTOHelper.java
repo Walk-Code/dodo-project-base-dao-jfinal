@@ -13,13 +13,10 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-/**
+/*
  * <b>JFinalORMConvertDTOHelper</b></br>
  *
  * <pre>
@@ -115,7 +112,15 @@ public class JFinalORMConvertDTOHelper {
 					field.setShort(beanObject, Short.valueOf(valueToStr));
 					continue;
 				}
+
 				if (!fieldType.toLowerCase().contains("float")) continue;
+
+				/*if (!fieldType.toLowerCase().contains("Date")) {
+					Date date = new Date(valueToStr);
+					field.set("Date", date);
+					continue;
+				}*/
+
 				field.setFloat(beanObject, Float.valueOf(valueToStr).floatValue());
 			}
 			return beanObject;

@@ -4,7 +4,7 @@ import com.jfinal.plugin.activerecord.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
+/*
  * <b>BaseDaoService</b></br>
  *
  * <pre>
